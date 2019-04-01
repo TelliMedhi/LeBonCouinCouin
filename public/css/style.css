@@ -1,0 +1,68 @@
+.logo{
+	max-width:300px;
+}
+
+.plus{
+	max-width:20px;
+	margin:10px;
+	margin-left:20px;
+	
+}
+
+.navbar-dark .navbar-nav .nav-link {
+    color: #fff; 
+    font-size: 1.1em;
+    !important
+}
+
+.pt-5, .py-5 {
+    padding-top: 10rem!important;
+}
+
+.page{
+	
+	margin-top:80px;
+	
+}
+
+
+.map__image path{
+
+  fill:#3D6ABE;
+
+  stroke: #1E357D;
+
+  stroke-width:2px;
+}
+.map__image path:hover{
+
+  fill:#fff;
+
+  
+}
+.map__image .is-active path{
+
+  fill:#fff;
+
+  
+}
+
+.map__list a{
+  color:inherit;
+
+  text-decoration: none;
+
+  tansition: color 0.3s;
+}
+
+.map__list a.is-active{
+  color:black;
+  
+  font-weight:bold;
+  
+  text-decoration:underline;
+}
+
+.text_home{
+	text-align:center;
+}
