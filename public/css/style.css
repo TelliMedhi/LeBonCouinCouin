@@ -66,3 +66,33 @@
 .text_home{
 	text-align:center;
 }
+
+#titre_page{
+	
+	margin-top:100px;
+	
+}
+.haut_page{
+	
+	border-bottom:solid;
+	margin-bottom:50px;
+}
+
+#category{
+	height:40px;
+	border:solid 1px black;
+	background-color:#fff;
+}
+
+.inputAddAnnonce{
+	height:40px;
+	border:solid 1px black;
+	background-color:#fff;
+}
+
+.inputTexarea{
+	height:200px;
+	border:solid 1px black;
+	background-color:#fff;
+	
+}

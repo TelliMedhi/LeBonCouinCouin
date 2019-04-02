@@ -23,3 +23,11 @@ Route::get('/', 'HomeController@index')->name('home')->middleware('verified');
 Route::get('/home', function () {
     return view('home');
 });
+
+  
+
+    Route::group([],function (){
+        Route::resource('article','ArticleController');
+    });
+    
+        

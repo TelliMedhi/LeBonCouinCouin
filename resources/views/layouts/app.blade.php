@@ -19,7 +19,7 @@
     
     <ul class="navbar-nav ml-auto">
     	
-    	<li class=""><a class="nav-link" href="{{asset('/home')}}"><img class="plus" src="{{asset('/img/+.png')}}">Désposer une annonce</a></li>
+    	<li class=""><a class="nav-link" href="{{route ('article.create')}}"><img class="plus" src="{{asset('/img/+.png')}}">Désposer une annonce</a></li>
        
     
     </ul>
