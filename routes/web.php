@@ -40,6 +40,5 @@ Route::get('/acceuil', function () {
     });
     
        
-    
-        
+        Route::get('/annonce/{id}', 'ArticleController@show');
 

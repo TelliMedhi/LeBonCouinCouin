@@ -8,6 +8,7 @@ use App\Article;
 use Illuminate\Support\Facades\Input;
 use App\User;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 
 
@@ -78,7 +79,9 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        //
+        $annonce = DB::table('articles')->where('id', $id)->first();
+        
+        return view('viewArticle')->with('annonce', $annonce);
     }
 
     /**
