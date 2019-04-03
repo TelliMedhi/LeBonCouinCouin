@@ -11,12 +11,35 @@
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+
+
+Auth::routes(['verify' => true]);
+
+
+
+Route::get('/', 'HomeController@index')->name('home')->middleware('verified');
+
+
+Route::get('/home', function () {
+    return view('home');
 });
+
 Route::get('/acceuil', function () {
     return view('footerComponent');
     });
     Route::get('/content', function () {
         return view('contentComponent');
     });
+
+   
+
+    Route::group([],function (){
+        
+        Route::resource('article','ArticleController')->middleware('verified');
+        
+    });
+    
+       
+    
+        
+
