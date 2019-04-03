@@ -18,11 +18,12 @@ class CreateArticlesTable extends Migration
             $table->string('category');
             $table->string('titre');
             $table->string('text');
-            $table->string('prix');
+            $table->float('prix');
             $table->string('image0');
-            $table->string('code_postal');
+            $table->float('code_postal');
             $table->string('region');
             $table->string('email');
+            $table->string('prenom');
             $table->timestamps();
         });
     }

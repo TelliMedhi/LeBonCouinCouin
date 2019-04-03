@@ -58,7 +58,7 @@
             <label class="label mt-3">Prix *</label>
             
             
-            <input type ="text" name="prix" class="form-group col-12 inputAddAnnonce" id="monInput" onblur="addEuro(this.value)" >
+            <input type ="number" step="0.01" min="0" name="prix" class="form-group col-12 inputAddAnnonce" id="monInput"  >
             
                 <div class="image-upload">
                   <label for="image0">
@@ -94,7 +94,7 @@
            
             <label class="label mt-3">Code postal *</label>
             
-            <input type ="text" name="code_postal" class="form-group col-12 inputAddAnnonce" >
+            <input type ="number" min="0" max="99999" name="code_postal" class="form-group col-12 inputAddAnnonce" >
             
              <label class="label mt-3">Région *</label>
             
@@ -126,6 +126,7 @@
             	<option value="22">Rhône-Alpes</option>
            
             </select>
+        
             
           </div>
           <div class="col-12 col-md-4">
@@ -143,10 +144,12 @@
           <label class="label mt-3">Email *</label>
           <select name="email" id="category" class="col-12">
             	<option value="{{ $user->email}}">{{ $user->email}}</option>
-            	
-           
             </select>
-             
+                            <label class="label mt-3">Prenom *</label>
+           <select name="prenom" id="category" class="col-12">
+            	<option value="{{ $user->name}}">{{ $user->name}}</option>
+            </select> 
+            
            
           </div>
         </div>

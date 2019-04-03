@@ -64,6 +64,7 @@ class ArticleController extends Controller
              'code_postal' => $request['code_postal'],
              'region' => $request['region'],
              'email' => $request['email'],
+             'prenom' => $request['prenom'],
            
         ]);
         
