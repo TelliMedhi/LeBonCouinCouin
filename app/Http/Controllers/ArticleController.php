@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use App\Article;
+use Illuminate\Support\Facades\Input;
 
 
 
@@ -41,22 +42,27 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-      
-        $path = $request->something;
-        echo $path;
+        $images = $request->image0->store('/storage/images');
+        
+        $image = $request->image0->store('public/images');
          
-         Article::create([
+        Article::create([
             'category' => $request['category'],
              'titre' => $request['titre'],
              'text' => $request['text'],
              'prix' => $request['prix'],
-             'image0' => $request['image0'],  
-            
+             'image0'=> $images,  
+           
         ]);
         
+                
         
-  
-      /*  return"votre article a bien été ajouté";*/
+        
+       
+       
+        
+        echo "annonce bien ajouté";
+    
         
     }
     /**

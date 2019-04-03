@@ -8,8 +8,8 @@
 	</div>
 	
 	<div class="col-12">
-	
-	<form action="{{ route('article.store')}}" method="post" enctype="mutlipart/form-data">
+	<!--  <img  src="{{asset('/storage/images/1ZS5eXFcdtpNV2zOe2vIYuWl0cP7lOb5w4TBO9J7.png')}}">-->
+	<form action="{{ route('article.store')}}" method="POST" enctype="multipart/form-data">
 	{{ csrf_field() }}
 		<div class="card">
           <div class="card-header">
@@ -51,9 +51,9 @@
             
             
             
-        <!--      <input type="file" class="picture" accept="image/bmp,image/gif,image/jpeg,image/png" name="file" id="image0">-->
+              <input type="file" class="picture" accept="image/bmp,image/gif,image/jpeg,image/png" name="image0" id="image0">
             
-             <input type="file" class="picture"  name="image0" id="image0">
+              <!--   <input type="file" name="image0" />-->
             
             <div class="form-group">
                 <img id="preview" class="img-fluid" src="#" alt="">
@@ -95,8 +95,7 @@
 	
 	</div>
     	
-    	
-    	
+   
     	
     	
     	
