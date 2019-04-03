@@ -2,9 +2,9 @@
 
 @section('content')
 <div class="container page">
-    <div class="col-12 ">
+    <div class="col-12 mt-4">
         <div class="row">
-        	<div class="col-4">
+        	<div class="col-12 col-md-4">
         		
         		<p class="mt-4"> <b>Trouvez la bonne affaire parmi 27,242,314 petites annonces sur leboncoincoin.</b></p>
         	
@@ -13,9 +13,9 @@
         		<button type="button" class="btn btn-outline-primary col-12 mt-4">Rechercher autour de moi</button>
     		</div>
     		 	
-    		<div class="col-8">
+    		<div class="col-12 col-md-8">
     		<div class="map row" id="map">
-      <div class="map__image col-8">
+      <div class="map__image col-12 col-md-8">
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:amcharts="http://amcharts.com/ammap" xmlns:xlink="http://www.w3.org/1999/xlink" version="1.1" viewBox="0 0 612 585">
 
           <g>
@@ -45,7 +45,7 @@
         </svg>
       </div>
 
-      <div class="map__list col-4">
+      <div class="map__list col-12 col-md-4">
         <ul>
           <li><a href="" id="list-A">Alsace</a></li>
           <li><a href="" id="list-B">Aquitaine</a></li>

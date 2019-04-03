@@ -124,3 +124,25 @@
 #prix_annonce{
 	color:#feea2d;
 }
+.description{
+	border-top:solid 1px #cad1d9;
+	border-bottom:solid 1px #cad1d9;
+	
+}
+.card-img-avatar{
+	max-width: 100%;
+	height: auto;
+	
+}
+
+#image_annonce{
+	max-width: 100%;
+	height: auto;
+	
+	
+}
+.button_numero_message{
+	color:#fff
+}
+
+
