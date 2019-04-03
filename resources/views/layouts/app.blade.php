@@ -60,7 +60,7 @@
  <div class="container">
     
     <div class="row col-3">
-        <div class="container block1">
+        <div class="container block1 pfooter">
             <p>À PROPOS DU BONCOINCOIN</p>
         </div>
         <div class="container">
@@ -68,7 +68,7 @@
             <a class="nav-link active" href="#">Nous rejoindre</a>
             <a class="nav-link active" href="#">Impact environnemental</a>
         </div>
-        <div class="container block1">
+        <div class="container block1 pfooter">
           <p>NOS FUTUR APPLICATIONS</p>
         </div>
         <div class="container blockImg">
@@ -81,7 +81,7 @@
    </div>
     
     <div class="row col-3">
-        <div class="container block2 ">
+        <div class="container block2 pfooter">
             <p>INFORMATION LÉGALES</p>
         </div>
          <div class="container">
@@ -99,7 +99,7 @@
     </div>
     
     <div class="row col-3">
-        <div class="container block3 ">
+        <div class="container block3 pfooter">
         <p>PROFESSIONNELS</p>
         </div>
          <div class="container">
@@ -112,7 +112,7 @@
         </div>
     
     <div class="row col-3">
-        <div class="container block4 ">
+        <div class="container block4 pfooter">
         
             <p>DES QUESTIONS ?</p>
         </div>
@@ -121,7 +121,7 @@
             <a class="nav-link active" href="#">Nous contacter</a>
             
         </div>
-        <div class="container block1">
+        <div class="container block1 pfooter">
            <p>VOUS ÊTES À L'ÉTRANGER</p>
         
         </div>
@@ -137,9 +137,9 @@
         </div>
         <div class="container blockVide3"></div> 
      </div>
-     <div class="container d-flex justify-content-center block5"><p class="block6">Partenaires :
+     <div class="container d-flex justify-content-center block5 pfooter"><p class="block6">Partenaires :
             <a class="link active" href="#">le coicoin Credit-</a>
-            <a class="link active" href="#">leboncoincoin Emploi Cadres</a>-
+            <a class="link active " href="#">leboncoincoin Emploi Cadres</a>-
             <a class="link active" href="#">Agriaffaires</a>-
             <a class="link active" href="#">MachineryZone</a>-
             <a class="link active" href="#">leDénicheur</a>-
@@ -149,8 +149,8 @@
      </div>
     
  </div>
-<div class="container" id="creation2">
-<p id="creation">Le boncoincoin 2018-2019</p>
+<div class="container pfooter" id="creation2">
+	<p id="creation">Le boncoincoin 2018-2019</p>
 </div>
 
 </nav>

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container page">
-    <div class="col-12">
+    <div class="col-12 ">
         <div class="row">
         	<div class="col-4">
         		
@@ -73,7 +73,7 @@
       </div>
     </div>
     		</div>
-    		<div class="col-12 text_home">
+    		<div class="col-12 text_home mb-5 mt-5">
     			Leboncoincoin est le site référent de petites annonces de particulier à particulier et professionnels en France. Découvrez nos annonces voitures d’occasion, motos, immobilier, emploi, location de vacances, vêtements, électroménager, jouets, déco, meubles, etc... Déposez une annonce gratuite en toute simplicité pour vendre, donner vos biens ou promouvoir vos services. Avec des milliers de nouvelles annonces mises en ligne chaque jour vous trouverez l’objet d’occasion ou neuf que vous désirez.
     		</div>	
             

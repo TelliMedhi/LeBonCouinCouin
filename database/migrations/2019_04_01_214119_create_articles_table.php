@@ -20,6 +20,9 @@ class CreateArticlesTable extends Migration
             $table->string('text');
             $table->string('prix');
             $table->string('image0');
+            $table->string('code_postal');
+            $table->string('region');
+            $table->string('email');
             $table->timestamps();
         });
     }

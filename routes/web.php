@@ -24,10 +24,14 @@ Route::get('/home', function () {
     return view('home');
 });
 
-  
+   
 
     Route::group([],function (){
-        Route::resource('article','ArticleController');
+        
+        Route::resource('article','ArticleController')->middleware('verified');
+        
     });
+    
+       
     
         

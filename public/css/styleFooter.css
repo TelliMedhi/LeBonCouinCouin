@@ -1,4 +1,4 @@
-p{
+.pfooter p{
     color: white;
    font-size: 13px;
 }
@@ -21,11 +21,11 @@ font-size: 13px;
 .dropdown{
     margin-top: 15px;
 }
-a{
+.nav-link , .link{
 font-size: 13px;
 color: white;
 }
-a:hover {
+.nav-link:hover {
     color:yellow;
     
 }
