@@ -67,15 +67,7 @@ class ArticleController extends Controller
            
         ]);
         
-                
-        
-        
-       
-       
-        
-        echo "annonce bien ajouté";
-    
-        
+        echo "annonce bien ajoutée";
     }
     /**
      * Display the specified resource.
