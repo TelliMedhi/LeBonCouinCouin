@@ -17,3 +17,6 @@ Route::get('/', function () {
 Route::get('/acceuil', function () {
     return view('footerComponent');
     });
+    Route::get('/content', function () {
+        return view('contentComponent');
+    });
