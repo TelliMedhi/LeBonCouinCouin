@@ -52,9 +52,6 @@
 @yield('content')
 
 <footer>
-
-
-</footer>
 <nav class="navbar navbar-dark bg-dark">
 
  <div class="container">
@@ -126,9 +123,9 @@
         
         </div>
         <div class="dropdown col-12">
-              <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Dropdown................
-              </button>
+                <button class="btn btn-warning dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </button> 
               <div class="dropdown-menu" aria-labelledby="dropdownMenu2">
                 <button class="dropdown-item" type="button">Action</button>
                 <button class="dropdown-item" type="button">Another action</button>
@@ -154,6 +151,10 @@
 </div>
 
 </nav>
+
+</footer>
+
+
 
 <script src="{{ asset('js/app.js') }}"></script>
 

@@ -36,8 +36,12 @@ class ArticleController extends Controller
      */
     public function create()
     {
+        /*SELECT email,name,articles.id  FROM `articles` inner join users on users.id=articles.user_id where user_id=2*/
         
-        $user = Auth::user();
+        
+        $user =  DB::table('users')
+                        ->SELECT('email','name')
+                        ->where('id', auth()->id())->first();
         
         
         return view('addAnnonce')->with('user',$user);
@@ -64,8 +68,7 @@ class ArticleController extends Controller
              'image0'=> $images,
              'code_postal' => $request['code_postal'],
              'region' => $request['region'],
-             'email' => $request['email'],
-             'prenom' => $request['prenom'],
+             'user_id'=> auth()->id(),
            
         ]);
         
@@ -79,7 +82,13 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
-        $annonce = DB::table('articles')->where('id', $id)->first();
+        $annonce =  DB::table('articles')
+        ->join('users' , 'users.id', '=','articles.user_id')
+        ->SELECT('text','name','email','prix','code_postal','titre','image0','articles.created_at')
+        ->where('articles.id', $id)->first();
+        
+        
+      /* $annonces = DB::table('articles')->where('id', $id)->first();*/
         
         return view('viewArticle')->with('annonce', $annonce);
     }
@@ -93,7 +102,7 @@ class ArticleController extends Controller
         
         $annonces = DB::table('articles')->where('region', $id)->get();
         
-        return view('viewArticle')->with('annonces', $annonces);
+        return view('header')->with('annonces', $annonces);
         
         
     }

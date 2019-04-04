@@ -24,8 +24,12 @@
 	margin-top:100px;
 	
 }
-
-
+@media only screen and (max-width:800px) {
+.page{
+	
+	margin-top:150px;
+}
+}
 .map__image path{
 
   fill:#3D6ABE;

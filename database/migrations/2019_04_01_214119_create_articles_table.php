@@ -22,8 +22,6 @@ class CreateArticlesTable extends Migration
             $table->string('image0');
             $table->float('code_postal');
             $table->string('region');
-            $table->string('email');
-            $table->string('prenom');
             $table->timestamps();
         });
     }

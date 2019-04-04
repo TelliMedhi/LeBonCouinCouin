@@ -12,7 +12,7 @@
                   <div class="card-body">
                     <h2><b>{{$annonce->titre}}</b></h2>
                     <h3 id="prix_annonce"><b>{{$annonce->prix}} €</b></h3>
-                    <p>{{$annonce->created_at}}</p>
+                 	<p>{{$annonce->created_at}}</p>
                   </div>
                 </div>
             
@@ -34,7 +34,7 @@
                       		<img src="{{asset('/img/avatar-1299805_640.png')}}" class="card-img-avatar " alt="...">
                       	</div>
                       	<div class="col-9">
-                      		<h3><b>{{$annonce->prenom}}</b></h3>
+                      		<h3><b>{{$annonce->name}}</b></h3>
                       	</div>
                      </div>
                   <div class="card-body p-0 mt-4 mb-4">
@@ -53,7 +53,7 @@
 <script>
 $(document).ready(function(){
 	$("#bouton_email").click(function(){
-		document.getElementById("bouton_email").innerHTML = "<h4><b>{{$annonce->email}}</b></h4>";
+		document.getElementById("bouton_email").innerHTML = "<h4><b></b>{{$annonce->email}}</h4>";
 	});
 	$("#bouton_localisation").click(function(){
 		document.getElementById("bouton_localisation").innerHTML = "<h4><b>code postal : {{$annonce->code_postal}}<b><h4>";
