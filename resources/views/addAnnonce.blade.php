@@ -25,17 +25,17 @@
             <select name="category" id="category" class="col-12">
             	<option value="0">Choisissez une catégorie</option>
             	<option value="1">Ordinateur</option>
-            	<option value="2">Aquitaine</option>
-            	<option value="3">Auvergne</option>
-            	<option value="4">Basse-Normandie</option>
-            	<option value="5">Bourgogne</option>
-            	<option value="6">Bretagne</option>
-            	<option value="7">Centre</option>
-            	<option value="8">Champagne-Ardenne</option>
-            	<option value="9">Corse</option>
-            	<option value="10">Franche-Comté</option>
-            	<option value="11">Haute-Normandie</option>
-            	<option value="12">Ile-de-France</option>
+            	<option value="2">Téléphonie</option>
+            	<option value="3">Maison</option>
+            	<option value="4">Vêtements</option>
+            	<option value="5">Voitures</option>
+            	<option value="6">Motos</option>
+            	<option value="7">Console</option>
+            	<option value="8">Jeux video</option>
+            	<option value="9">Vélos</option>
+            	<option value="10">jeux & jouets</option>
+            	<option value="11">Objets de collection</option>
+            	<option value="12">Instruments de musique</option>
             
             
             

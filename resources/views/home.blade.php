@@ -8,7 +8,7 @@
         		
         		<p class="mt-4"> <b>Trouvez la bonne affaire parmi 27,242,314 petites annonces sur leboncoincoin.</b></p>
         	
-        		<button type="button" class="btn btn-primary col-12">Déposer une annonce</button>
+        	<a href="{{route ('article.create')}}">	<button type="button"  class="btn btn-primary col-12">Déposer une annonce</button></a>
         		
         		<button type="button" class="btn btn-outline-primary col-12 mt-4">Rechercher autour de moi</button>
     		</div>

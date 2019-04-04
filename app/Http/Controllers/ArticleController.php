@@ -83,7 +83,21 @@ class ArticleController extends Controller
         
         return view('viewArticle')->with('annonce', $annonce);
     }
-
+    
+    
+    //function pour afficher les annonces celon la region avec la carte 
+    
+    public function shows($id)
+    {
+        
+        
+        $annonces = DB::table('articles')->where('region', $id)->first();
+        
+        return view('pagemedhi')->with('annonces', $annonces);
+        
+        
+    }
+    
     /**
      * Show the form for editing the specified resource.
      *
