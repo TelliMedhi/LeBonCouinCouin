@@ -93,6 +93,7 @@ class ArticleController extends Controller
         return view('viewArticle')->with('annonce', $annonce);
     }
     
+
     
     //function pour afficher les annonces celon la region avec la carte 
     
@@ -107,6 +108,16 @@ class ArticleController extends Controller
         
     }
     
+
+    public function showss($id)
+    {
+      $category = DB::table('articles')->where('category',$id)->get();
+      return view('contentComponent')->with('category',$category);
+    
+      
+    }
+
+
     /**
      * Show the form for editing the specified resource.
      *

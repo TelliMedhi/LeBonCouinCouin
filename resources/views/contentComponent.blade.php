@@ -1,7 +1,7 @@
-@extends('template')
+@extends('layouts.app')
 
 @section('content')
-<div class="container">	
+<div class="container page">	
 <div class="alert alert-dark container" role="alert">
     <div class="  col-12 row">
         <div class="container col-6 row">
@@ -68,9 +68,62 @@
 	<div class=" text-center">
 	   <img class="pub " alt="" src="{{asset('/img/backup.jpg')}}">
 	 </div>
-	 <div class="container">
-	 <big>2 496 995 Annonces</big>
+	 <div class="container row blSouPub">
+    	 <div class="col-3">
+    	   <p>2 496 995 Annonces</p>
+    	 </div>
+    	 <div class="col-5">
+    	   <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+              <label class="form-check-label" for="inlineCheckbox1">Particuliers 2 278 799</label>
+           </div>
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+              <label class="form-check-label" for="inlineCheckbox2">Professionnels 218 196</label>
+          </div>
+    	</div>
+	  <div class="btn-group">
+  <button type="button" class="btn btn-warning dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+   tries:plus récentes
+  </button>
+  <div class="dropdown-menu dropdown-menu-right">
+    <button class="dropdown-item" type="button">Action</button>
+    <button class="dropdown-item" type="button">Another action</button>
+    <button class="dropdown-item" type="button">Something else here</button>
+  </div>
+</div>
 	 </div>
+	 <div class="col-12 row">
+	
+	
+	@foreach($category as $annonce)
+	 <div class="card col-8 row">
+	  <div class="card-body row col-12">
+	  <div class="imgCard col-4">
+    <img class="card-img-top" src="{{asset($annonce->image0)}}" alt="Card image cap">
+  </div>
+   <div class="col-6">
+  <a class="nav-link active" id="titleCard"href="#"><big>{{$annonce->text}}</big></a>
+  <p>prix : {{$annonce->prix}}</p>
+   </div>
+ 
+  </div>
+
+	</div>
+	
+	@endforeach
+	
+	
+	
+	<div class="col-4">
+	<div class="card" style="width: 18rem;">
+	<span class="badge col-3 badge-pill badge-warning">à la une</span>
+  <img class="card-img-top" src="{{asset('/img/logoAppGoogle.png')}}" alt="Card image cap">
+  <div class="card-body">
+    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+  </div>
+</div>
+	</div>
 	</div>
 	
 	
