@@ -91,9 +91,9 @@ class ArticleController extends Controller
     {
         
         
-        $annonces = DB::table('articles')->where('region', $id)->first();
+        $annonces = DB::table('articles')->where('region', $id)->get();
         
-        return view('pagemedhi')->with('annonces', $annonces);
+        return view('viewArticle')->with('annonces', $annonces);
         
         
     }

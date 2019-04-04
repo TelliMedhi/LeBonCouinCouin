@@ -6,6 +6,7 @@
         <div class="row">
         
             <div class="col-12 col-md-8">
+           
             	<div class="card col-12 " >
                   <center><img src="{{asset($annonce->image0)}}" class="" id="image_annonce" alt="..."></center>
                   <div class="card-body">
@@ -14,9 +15,10 @@
                     <p>{{$annonce->created_at}}</p>
                   </div>
                 </div>
+            
                 <div class="col-12 description  mt-5 pt-3 pb-5">
                 	 <h4><b>Description</b></h4>
-                	 <p>{{$annonce->text}}</p>
+                	   <p>{{$annonce->text}}</p>
                 </div>
                 <div class="col-12 description mb-5  pt-3 pb-5">
                 	<h4><b>Localisation</b></h4>

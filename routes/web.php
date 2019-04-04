@@ -41,4 +41,6 @@ Route::get('/acceuil', function () {
     
        
         Route::get('/annonce/{id}', 'ArticleController@show');
+        
+        Route::get('/region/{id}', 'ArticleController@shows');
 
