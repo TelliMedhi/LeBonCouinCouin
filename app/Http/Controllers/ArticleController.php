@@ -103,7 +103,7 @@ class ArticleController extends Controller
         
         $annonces = DB::table('articles')->where('region', $id)->get();
         
-        return view('header')->with('annonces', $annonces);
+        return view('contentComponent')->with('annonces', $annonces);
         
         
     }
@@ -111,8 +111,8 @@ class ArticleController extends Controller
 
     public function showss($id)
     {
-      $category = DB::table('articles')->where('category',$id)->get();
-      return view('contentComponent')->with('category',$category);
+      $annonces = DB::table('articles')->where('category',$id)->get();
+      return view('contentComponent')->with('annonces',$annonces);
     
       
     }

@@ -24,6 +24,7 @@ class CreateArticlesTable extends Migration
             $table->string('region');
             $table->string('user_id');
             $table->timestamps();
+            /*$table->forinkey*/
         });
     }
 
