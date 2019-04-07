@@ -24,8 +24,9 @@ class ArticleController extends Controller
     public function index()
     {
        
-        $articles = Article::all();
-        return $articles;
+        $annonces = Article::all()->orderBy('id','desc')->get();;
+        
+        return view('contentComponent')->with('annonces', $annonces);
     }
 
    
@@ -101,7 +102,7 @@ class ArticleController extends Controller
     {
         
         
-        $annonces = DB::table('articles')->where('region', $id)->get();
+        $annonces = DB::table('articles')->where('region', $id)->orderBy('id','desc')->get();
         
         return view('contentComponent')->with('annonces', $annonces);
         
@@ -111,7 +112,7 @@ class ArticleController extends Controller
 
     public function showss($id)
     {
-      $annonces = DB::table('articles')->where('category',$id)->get();
+        $annonces = DB::table('articles')->where('category',$id)->orderBy('id','desc')->get();
       return view('contentComponent')->with('annonces',$annonces);
     
       

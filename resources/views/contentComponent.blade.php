@@ -97,20 +97,20 @@
 	
 	
 	@foreach($annonces as $annonce)
-	 <div class="card col-8 row">
+	<a href="../annonce/{{ $annonce->id}}"> <div class="card col-8 row">
 	  <div class="card-body row col-12">
 	  <div class="imgCard col-4">
     <img class="card-img-top" src="{{asset($annonce->image0)}}" alt="Card image cap">
   </div>
    <div class="col-6">
   <a class="nav-link active" id="titleCard"href="#"><big>{{$annonce->titre}}</big></a>
-  <p>prix : {{$annonce->prix}}</p>
+  <p>prix : {{$annonce->prix}} €</p>
    </div>
  
   </div>
 
 	</div>
-	
+	</a>
 	@endforeach
 	
 	
