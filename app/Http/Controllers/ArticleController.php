@@ -43,6 +43,7 @@ class ArticleController extends Controller
         $user =  DB::table('users')
                         ->SELECT('email','name')
                         ->where('id', auth()->id())->first();
+                        
         
         
         return view('addAnnonce')->with('user',$user);
@@ -60,6 +61,13 @@ class ArticleController extends Controller
         $images = $request->image0->store('/storage/images');
         
         $image = $request->image0->store('public/images');
+        
+        $postal =  DB::table('articles')
+        ->join('villes_france_free' , 'ville_code_postal', '=','code_postal')
+        ->SELECT('ville_longitude_deg','ville_latitude_deg')
+        ->where('code_postal', $request['code_postal'])->first();
+        
+        
          
         Article::create([
             'category' => $request['category'],
@@ -70,10 +78,11 @@ class ArticleController extends Controller
              'code_postal' => $request['code_postal'],
              'region' => $request['region'],
              'user_id'=> auth()->id(),
-           
+            'longitude' => $postal->ville_longitude_deg,
+            'latitude'=>$postal->ville_latitude_deg,
         ]);
         
-        echo "annonce bien ajoutée";
+        echo " annonce bien ajouté !";
     }
     /**
      * Display the specified resource.

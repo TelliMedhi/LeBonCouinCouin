@@ -24,6 +24,10 @@ class CreateArticlesTable extends Migration
             $table->string('region');
             $table->string('user_id');
             $table->timestamps();
+            $table->float('longitude');
+            $table->float('latitude');
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('code_postal')->references('ville_code_postal')->on('villes_france_free');
             /*$table->forinkey*/
         });
     }
