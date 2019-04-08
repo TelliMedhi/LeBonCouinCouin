@@ -3,24 +3,18 @@
    font-size: 13px;
 }
 .block1{
-border-bottom: 1px solid white;
-font-size: 13px;
+	border-bottom: 1px solid white;
+	font-size: 13px;
+
 }
-.block2{
- border-bottom: 1px solid white;
- font-size: 13px;   
-}
-.block3{
-border-bottom: 1px solid white;
-font-size: 13px; 
-}
+
 
 .dropdown{
     margin-top: 15px;
 }
 .nav-link , .link{
-font-size: 13px;
-color: white;
+	font-size: 13px;
+	color: white;
 }
 .nav-link:hover {
     color:yellow;
@@ -33,20 +27,12 @@ color: white;
 }
 .block6{
     margin-top: 5px;
-height: 15px;
+	height: 15px;
 }
 .blockImg{
-margin-top: 10px;
+	margin-top: 10px;
 }
-.blockVide1{
-    height: 35px;
-}
-.blockVide2{
-    height: 128px;
-}
-.blockVide3{
-    height: 110px;
-}
+
 #creation{
     margin-top: 5px;
 }
@@ -54,7 +40,26 @@ margin-top: 10px;
     height:20px;
 }
 
+.img_footer{
+	max-width:120px;
+}
 
+@media only screen and (max-width:800px) {
+	.nav-link , .img_footer {
+		display:none;
+	}
+	.p_2responsive{
+	display:none;
+}
+	
+}
+
+@media only screen and (min-width:800px) {
+	.p_responsive{
+		display:none;
+	}
+	
+}
 
 
 
