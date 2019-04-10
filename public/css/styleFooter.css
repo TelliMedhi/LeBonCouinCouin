@@ -61,7 +61,40 @@
 	
 }
 
+.Cardcontent{
+		
+		color:black;
+	   min-height:180px;
+	   background-color:#fff; 
+	   border-radius:5px;
+	   box-shadow: 1px 1px 12px #cad1d9;
+  	
+}
 
 
 
-
+.card-img-top{
+	    
+   	width: 150px;
+	height: 150px;
+	max-width: 100%;
+	height: auto;
+    
+    margin: auto;
+  
+    
+}
+.imgCard{
+	background-color:#cad1d9;
+	border-top-left-radius:5px;
+	border-bottom-left-radius:5px;
+	max-width: 250px;
+	
+	
+}
+.prixCard{
+	    color: #feea2d;
+}
+.titreCard:hover{
+	color: #feea2d;
+}

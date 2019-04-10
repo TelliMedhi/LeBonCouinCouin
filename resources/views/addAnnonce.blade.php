@@ -22,8 +22,8 @@
             
             
             
-            <select name="category" id="category" class="col-12">
-            	<option value="0">Choisissez une catégorie</option>
+            <select name="category" required id="category" class="col-12">
+            	<option value="">Choisissez une catégorie</option>
             	<option value="1">Ordinateur</option>
             	<option value="2">Téléphonie</option>
             	<option value="3">Maison</option>
@@ -37,8 +37,6 @@
             	<option value="11">Objets de collection</option>
             	<option value="12">Instruments de musique</option>
             
-            
-            
             </select>
             
             
@@ -47,25 +45,26 @@
             
             
             
-            <input type ="text" name="titre" class="form-group col-12 inputAddAnnonce" >
+            <input type ="text"  required name="titre" class="form-group col-12 inputAddAnnonce" >
             
             
             <label class="label mt-3">Texte de l'annonce *</label>
             
             
-            ​<textarea id="txtArea" class="form-group col-12 inputTexarea" name="text" rows="10" cols="70"></textarea>
+            ​<textarea id="txtArea" required class="form-group col-12 inputTexarea" name="text" rows="10" cols="70"></textarea>
             
             <label class="label mt-3">Prix *</label>
             
-            
-            <input type ="number" step="0.01" min="0" name="prix" class="form-group col-12 inputAddAnnonce" id="monInput"  >
-            
+            <div class="row col-12">
+            <input  type ="number" step="0.01" min="0" name="prix" class="form-group col-6 inputAddAnnonce " id="monInput" required >
+          		<div class="col-6"><h2><b>€</b></h2></div>
+            </div>
                 <div class="image-upload">
                   <label for="image0">
                     <img src="{{asset('/img/pictograms-nps-misc-camera.png')}}"/>
                   </label>
                 
-                  <input type="file" class="picture" accept="image/bmp,image/gif,image/jpeg,image/png" name="image0" id="image0">
+                  <input type="file" required class="picture" accept="image/bmp,image/gif,image/jpeg,image/png" name="image0" id="image0">
                 </div>
                 
             
@@ -94,14 +93,14 @@
            
             <label class="label mt-3">Code postal *</label>
             
-            <input type ="number" min="0" max="99999" name="code_postal" class="form-group col-12 inputAddAnnonce" >
+            <input type ="number" required  min="0" max="99999" name="code_postal" class="form-group col-12 inputAddAnnonce" >
             
              <label class="label mt-3">Région *</label>
             
             
             
-             <select name="region" id="category" class="col-12">
-            	<option value="0">Choisissez une Région</option>
+             <select name="region" required id="category" class="col-12">
+            	<option value="">Choisissez une Région</option>
             	<option value="1">Alsace</option>
             	<option value="2">Aquitaine</option>
             	<option value="3">Auvergne</option>
@@ -205,5 +204,10 @@
                 }
             })
         })
+        
+      
+
+       
+        
     </script>
 @endsection

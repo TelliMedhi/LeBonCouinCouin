@@ -87,6 +87,7 @@ class UserController extends Controller
         return view('destroy', compact('user'));
     }
     
+    
     public function destroy(User $user)
     {
         $user->delete();

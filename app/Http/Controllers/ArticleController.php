@@ -20,13 +20,30 @@ class ArticleController extends Controller
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
+     * 
      */
+    
+    
+    public function acceuil()
+    {
+        $count = DB::table('articles')->count();
+        
+        
+        return view('/home')->with('count',$count);
+    }
+    
+    
     public function index()
     {
-       
-        $annonces = Article::all()->orderBy('id','desc')->get();;
+        $count = DB::table('articles')->count();
         
-        return view('contentComponent')->with('annonces', $annonces);
+        $annonce =  DB::table('articles')
+        
+        ->orderBy('id','desc')->get();
+        
+        //$annonces = Article::all()->orderBy('id','desc')->get();
+        
+        return view('contentComponent')->with('annonces', $annonce)->with('count',$count);
     }
 
    
@@ -46,7 +63,7 @@ class ArticleController extends Controller
                         
         
         
-        return view('addAnnonce')->with('user',$user);
+         return view('addAnnonce')->with('user',$user);
         
     }
 
@@ -61,15 +78,13 @@ class ArticleController extends Controller
         $images = $request->image0->store('/storage/images');
         
         $image = $request->image0->store('public/images');
-        
-        $postal =  DB::table('articles')
-        ->join('villes_france_free' , 'ville_code_postal', '=','code_postal')
+       
+        $postal = DB::table('villes_france_free')
         ->SELECT('ville_longitude_deg','ville_latitude_deg')
-        ->where('code_postal', $request['code_postal'])->first();
-        
-        
+        ->where( 'ville_code_postal', $request['code_postal'])->first();
          
-        Article::create([
+        Article::create(
+            [
             'category' => $request['category'],
              'titre' => $request['titre'],
              'text' => $request['text'],
@@ -78,11 +93,17 @@ class ArticleController extends Controller
              'code_postal' => $request['code_postal'],
              'region' => $request['region'],
              'user_id'=> auth()->id(),
-            'longitude' => $postal->ville_longitude_deg,
-            'latitude'=>$postal->ville_latitude_deg,
+             'longitude' => $postal->ville_longitude_deg,
+             'latitude'=> $postal->ville_latitude_deg,
         ]);
         
-        echo " annonce bien ajouté !";
+      
+        
+        $count = DB::table('articles')->count();
+        
+        
+        return view('/home')->with('count',$count);
+        
     }
     /**
      * Display the specified resource.
@@ -111,23 +132,52 @@ class ArticleController extends Controller
     {
         
         
+        $count = DB::table('articles')->count();
+        
         $annonces = DB::table('articles')->where('region', $id)->orderBy('id','desc')->get();
         
-        return view('contentComponent')->with('annonces', $annonces);
+        return view('contentComponent')->with('annonces', $annonces )->with('count',$count);
+        
         
         
     }
     
 
-    public function showss($id)
+    public function category()
     {
-        $annonces = DB::table('articles')->where('category',$id)->orderBy('id','desc')->get();
-      return view('contentComponent')->with('annonces',$annonces);
+        $id_category =$_POST['category'];
+        
+        $id_region = $_POST['region'];
+        
+        $count = DB::table('articles')->count();
+        
+        if (($_POST['category'] == 0 & $_POST['region'] == 0))
+        {
+            return redirect()->action('ArticleController@index');
+        }
+        elseif(($_POST['category'] !== 0 & $_POST['region'] == 0)){
+            
+            $annonces = DB::table('articles')->where('category',$id_category)->orderBy('id','desc')->get();
+            return view('contentComponent')->with('annonces',$annonces)->with('count',$count);
+            
+        }
+        elseif(($_POST['category'] == 0 & $_POST['region'] !== 0)){
+            
+            $annonces = DB::table('articles')->where('region', $id_region)->orderBy('id','desc')->get();
+            
+            return view('contentComponent')->with('annonces', $annonces )->with('count',$count);
+            
+        }
+        else{
+            $annonces = DB::table('articles')->where('category',$id_category)->where('region',$id_region)->orderBy('id','desc')->get();
+        return view('contentComponent')->with('annonces',$annonces)->with('count',$count);
+        }
     
-      
     }
 
-
+    
+    
+    
     /**
      * Show the form for editing the specified resource.
      *

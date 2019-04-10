@@ -13,7 +13,7 @@
 </head>
 <body>
 <nav class="navbar fixed-top navbar-expand-lg navbar-dark bg-dark">
-    <a href="{{asset('/home')}}"><img class="logo" src="{{asset('/img/Leboncoincoin.png')}}"></a>
+    <a href="{{asset('/')}}"><img class="logo" src="{{asset('/img/Leboncoincoin.png')}}"></a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -28,7 +28,7 @@
     <ul class="navbar-nav ml-auto">
     	
     	
-        <li class=""><a class="nav-link" href="{{asset('/home')}}">Recherche</a></li>
+        <li class=""><a class="nav-link" href="{{asset('/recherche')}}">Recherche</a></li>
     
     </ul>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">

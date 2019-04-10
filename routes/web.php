@@ -17,12 +17,10 @@ Auth::routes(['verify' => true]);
 
 
 
-Route::get('/', 'HomeController@index')->name('home')->middleware('verified');
 
 
-Route::get('/home', function () {
-    return view('home');
-});
+
+
 
 Route::get('/acceuil', function () {
     return view('footerComponent');
@@ -43,7 +41,15 @@ Route::get('/acceuil', function () {
        
         Route::get('/annonce/{id}', 'ArticleController@show');
 
-		Route::get('/category/{id}','ArticleController@showss');  
+		Route::get('/category/{id}','ArticleController@category');  
     
         Route::get('/region/{id}', 'ArticleController@shows');
+        
+        Route::get('/recherche', 'ArticleController@index');
+        
+        Route::get('/', 'ArticleController@acceuil')->middleware('verified');
+        
+        Route::get('/home', 'ArticleController@acceuil');
+        
+        Route::post('/category', 'ArticleController@category');
 

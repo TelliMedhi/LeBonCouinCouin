@@ -17,19 +17,35 @@
     			 </div>
 			</div>
             <div class="col-5">
-                <div class="btn-group Dropdown">
-                      <button type="button" class="btn btn-warning">Action....................</button>
-                      <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <span class="sr-only">Toggle Dropdown</span>
-                          </button>
-                          <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Separated link</a>
-  						</div>
-                </div>
+            <form action="{{asset( '/category')}}" method="POST" enctype="multipart/form-data">
+							{{ csrf_field() }}      
+							
+                                <select name="region" id="category" class="col-12 mt-4">
+                                	<option value="0">Toute la France </option>
+                                	<option value="1">Alsace</option>
+                                	<option value="2">Aquitaine</option>
+                                	<option value="3">Auvergne</option>
+                                	<option value="4">Basse-Normandie</option>
+                                	<option value="5">Bourgogne</option>
+                                	<option value="6">Bretagne</option>
+                                	<option value="7">Centre</option>
+                                	<option value="8">Champagne-Ardenne</option>
+                                	<option value="9">Corse</option>
+                                	<option value="10">Franche-Comté</option>
+                                	<option value="11">Haute-Normandie</option>
+                                	<option value="12">Ile-de-France</option>
+                                	<option value="13">Languedoc-Roussillon</option>
+                                	<option value="14">Limousin</option>
+                                	<option value="15">Lorraine</option>
+                                	<option value="16">Midi-Pyrénées</option>
+                                	<option value="17">Nord-Pas-de-Calais</option>
+                                	<option value="18">Pays de la Loire</option>
+                                	<option value="19">Picardie</option>
+                                	<option value="20">Poitou-Charentes</option>
+                                	<option value="21">Provence-Alpes-Côte d'Azur</option>
+                                	<option value="22">Rhône-Alpes</option>
+                               
+                            </select>
        
 			</div>
 		
@@ -38,23 +54,42 @@
 		    <div class="col-12 row">
 		     <div class="col-6">
 	            <div class="btn-group ">
-                      <button type="button" class="btn btn-warning">Action..........................</button>
-                      <button type="button" class="btn btn-warning dropdown-toggle dropdown-toggle-split" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                      
+                      
                             <span class="sr-only">Toggle Dropdown</span>
-                          </button>
-                          <div class="dropdown-menu">
-                            <a class="dropdown-item" href="#">Action</a>
-                            <a class="dropdown-item" href="#">Another action</a>
-                            <a class="dropdown-item" href="#">Something else here</a>
-                            <div class="dropdown-divider"></div>
-                            <a class="dropdown-item" href="#">Separated link</a>
-  						</div>
+                          
+                     
+                            
+                           <select name="category" id="category" class="col-12 mb-4">
+                            	<option value="0">Toutes catégories</option>
+                            	<option value="1">Ordinateur</option>
+                            	<option value="2">Téléphonie</option>
+                            	<option value="3">Maison</option>
+                            	<option value="4">Vêtements</option>
+                            	<option value="5">Voitures</option>
+                            	<option value="6">Motos</option>
+                            	<option value="7">Console</option>
+                            	<option value="8">Jeux video</option>
+                            	<option value="9">Vélos</option>
+                            	<option value="10">jeux & jouets</option>
+                            	<option value="11">Objets de collection</option>
+                            	<option value="12">Instruments de musique</option>
+            
+            
+            
+            				</select>
+            			
+        	
+            			
   					</div>
-  					 <input class="form-control mr-sm-2 Dropdown" type="search" placeholder="Que recherchez-vous?" aria-label="Search">
+  					 <input class="form-control mr-sm-2 Dropdown" type="search" placeholder="code postal" aria-label="Search">
   					
   				</div>
   			<div class="col-6">
-  			<button type="button" class="btn btn-primary  btn-block">rechercher</button>
+  				<button type="submit" class="btn btn-primary  btn-block">rechercher</button>
+  			
+  			</form>
+        
   			 <a class="nav-link active Es1" href="#">Sauvegarder la recherche</a>
   			</div>
                </div>
@@ -70,7 +105,7 @@
 	 </div>
 	 <div class="container row blSouPub">
     	 <div class="col-3">
-    	   <p>2 496 995 Annonces</p>
+    	   <p>{{$count}} Annonces</p>
     	 </div>
     	 <div class="col-5">
     	   <div class="form-check form-check-inline">
@@ -94,50 +129,52 @@
 </div>
 	 </div>
 	 <div class="col-12 row">
-	
-	
-	@foreach($annonces as $annonce)
-	<a href="../annonce/{{ $annonce->id}}"> <div class="card col-8 row">
-	  <div class="card-body row col-12">
-	  <div class="imgCard col-4">
-    <img class="card-img-top" src="{{asset($annonce->image0)}}" alt="Card image cap">
-  </div>
-   <div class="col-6">
-  <a class="nav-link active" id="titleCard"href="#"><big>{{$annonce->titre}}</big></a>
-  <p>prix : {{$annonce->prix}} €</p>
-   </div>
- 
-  </div>
+	   
+	<?php if(!$annonces->isEmpty()) { ?>
+	    @foreach($annonces as $annonce)
+	        
+	        <a href=" {{ URL::asset('annonce') }}/{{$annonce->id}} " class="col-12 col-md-9 row lienCard" style="text-decoration:none;">
+	        <div  class="col-12 row Cardcontent mb-4  pl-0">
+	        
+	        <div class="col-4 text-center imgCard">
+	        <img class="card-img-top" src="{{asset($annonce->image0)}}" alt="Card image cap">
+	        </div>
+	        <div class="col-8">
+	        <div class="col-12 mt-4">
+	        <h3 class="titreCard"><b>{{$annonce->titre}}</b></h3>
+	        <h4 class="prixCard"><b>{{$annonce->prix}} €</b></h4>
+	        </div>
+	        
+	        <div class="col-12 mt-4">
+	        <p>{{$annonce->code_postal}}<p>
+	        <p>{{$annonce->created_at}}<p>
+	        
+	        </div>
+	        </div>
+	        
+	        </div>
+	        </a>
+	        
+	        
+	        
+	        
+	        @endforeach
+	        <?php 
+            } else {
+                ?>
+                <div class="text-center mt-5 mb-5 col-12">
+             		<h2><b>  Aucune annonce trouvée !</b></h2> 
 
-	</div>
-	</a>
-	@endforeach
-	
-	
-	
-	<div class="col-4">
-	<div class="card" style="width: 18rem;">
-	<span class="badge col-3 badge-pill badge-warning">à la une</span>
-  <img class="card-img-top" src="{{asset('/img/logoAppGoogle.png')}}" alt="Card image cap">
-  <div class="card-body">
-    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-  </div>
-</div>
-	</div>
-	</div>
+					<p>Pas de résultats dans cette catégorie? Nous vous conseillons 
+					de changer de catégorie <br>ou d'opter pour la famille de 
+					catégories dans laquelle se trouve cette catégorie.</p>
+               </div>
+                <?php 
+            }
+     ?>
+	    
 
-	
+    </div>
 </div>	
-	
-
-	
-
-
-
-
-
-
-
-
 
 @endsection

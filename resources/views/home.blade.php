@@ -6,7 +6,7 @@
         <div class="row">
         	<div class="col-12 col-md-4">
         		
-        		<p class="mt-4"> <b>Trouvez la bonne affaire parmi 27,242,314 petites annonces sur leboncoincoin.</b></p>
+        		<p class="mt-4"> <b>Trouvez la bonne affaire parmi {{$count}} petites annonces sur leboncoincoin.</b></p>
         	
         	<a href="{{route ('article.create')}}">	<button type="button"  class="btn btn-primary col-12">Déposer une annonce</button></a>
         		
@@ -56,7 +56,7 @@
           <li><a href="{{ asset('region/7') }}" id="list-F">Centre</a></li>
           <li><a href="{{ asset('region/8') }}" id="list-G">Champagne-Ardenne</a></li>
           <li><a href="{{ asset('region/9') }}" id="list-H">Corse</a></li>
-          <li><a href="{{ asset('region/10') }}" id="list-J">Franche-Comté</a></li>
+          <li><a href="{{ asset('region/10') }}" id="list-I">Franche-Comté</a></li>
           <li><a href="{{ asset('region/11') }}" id="list-Q" >Haute-Normandie</a></li>
           <li><a href="{{ asset('region/12') }}" id="list-J">Ile-de-France</a></li>
           <li><a href="{{ asset('region/13') }}" id="list-K">Languedoc-Roussillon</a></li>
