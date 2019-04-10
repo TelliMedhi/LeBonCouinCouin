@@ -52,4 +52,5 @@ Route::get('/acceuil', function () {
         Route::get('/home', 'ArticleController@acceuil');
         
         Route::post('/category', 'ArticleController@category');
-
+        
+       

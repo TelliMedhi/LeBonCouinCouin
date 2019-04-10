@@ -149,27 +149,58 @@ class ArticleController extends Controller
         
         $id_region = $_POST['region'];
         
+        $code_postal = $_POST['code_postal'];
+        
         $count = DB::table('articles')->count();
         
-        if (($_POST['category'] == 0 & $_POST['region'] == 0))
+        if (($_POST['category'] == 0 & $_POST['region'] == 0 & $_POST['code_postal'] == null ) )
         {
             return redirect()->action('ArticleController@index');
         }
-        elseif(($_POST['category'] !== 0 & $_POST['region'] == 0)){
+        elseif(($_POST['category'] !== 0 & $_POST['region'] == 0 & $_POST['code_postal'] == null)){
             
             $annonces = DB::table('articles')->where('category',$id_category)->orderBy('id','desc')->get();
             return view('contentComponent')->with('annonces',$annonces)->with('count',$count);
             
         }
-        elseif(($_POST['category'] == 0 & $_POST['region'] !== 0)){
+        elseif(($_POST['category'] == 0 & $_POST['region'] !== 0 & $_POST['code_postal'] == null)){
             
             $annonces = DB::table('articles')->where('region', $id_region)->orderBy('id','desc')->get();
             
             return view('contentComponent')->with('annonces', $annonces )->with('count',$count);
             
         }
-        else{
+        elseif(($_POST['category'] == 0 & $_POST['region'] == 0 & $_POST['code_postal'] !== null)){
+            
+            $annonces = DB::table('articles')->where('code_postal', $code_postal)->orderBy('id','desc')->get();
+            
+            return view('contentComponent')->with('annonces', $annonces )->with('count',$count);
+            
+        }
+        elseif(($_POST['category'] !== 0 & $_POST['region'] !== 0 & $_POST['code_postal'] == null)){
+            
             $annonces = DB::table('articles')->where('category',$id_category)->where('region',$id_region)->orderBy('id','desc')->get();
+            
+            return view('contentComponent')->with('annonces', $annonces )->with('count',$count);
+            
+        }
+        elseif(($_POST['category'] !== 0 & $_POST['region'] == 0 & $_POST['code_postal'] !== null)){
+            
+            $annonces = DB::table('articles')->where('category',$id_category)->where('code_postal', $code_postal)->orderBy('id','desc')->get();
+            
+            return view('contentComponent')->with('annonces', $annonces )->with('count',$count);
+            
+        }
+        elseif(($_POST['category'] == 0 & $_POST['region'] !== 0 & $_POST['code_postal'] !== null)){
+            
+            $annonces = DB::table('articles')->where('region',$id_region)->where('code_postal', $code_postal)->orderBy('id','desc')->get();
+            
+            return view('contentComponent')->with('annonces', $annonces )->with('count',$count);
+            
+        }
+        else{
+            
+            $annonces = DB::table('articles')->where('category',$id_category)->where('region',$id_region)->where('code_postal', $code_postal)->orderBy('id','desc')->get();
         return view('contentComponent')->with('annonces',$annonces)->with('count',$count);
         }
     

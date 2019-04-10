@@ -31,6 +31,7 @@
         <li class=""><a class="nav-link" href="{{asset('/recherche')}}">Recherche</a></li>
     
     </ul>
+    
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav ml-auto">
         
@@ -53,7 +54,7 @@
 
 <footer>
 
-    <nav class="navbar navbar-dark bg-dark">
+     <nav class="navbar navbar-dark bg-dark">
     
      <div class="container mt-0 pt-0 ">
      	
@@ -65,10 +66,10 @@
                         	<p>À PROPOS DU BONCOINCOIN</p>
                     	</div>
                         
-                        <div class="">
-                            <a class="nav-link active" href="#">Qui sommes-nous ?</a>
-                            <a class="nav-link active" href="#">Nous rejoindre</a>
-                            <a class="nav-link active" href="#">Impact environnemental</a>
+                        <div class=""> 
+                            <a class="nav-link active nav-link_footer " href="#">Qui sommes-nous ?</a>
+                            <a class="nav-link active nav-link_footer " href="#">Nous rejoindre</a>
+                            <a class="nav-link active nav-link_footer " href="#">Impact environnemental</a>
                         </div>
                         
                         <div class=" block1 pfooter">
@@ -97,12 +98,12 @@
                         <p>INFORMATION LÉGALES</p>
                     </div>
                      <div class="">
-                        <a class="nav-link active" href="#">Conditions générales d’utilisation</a>
-                        <a class="nav-link active" href="#">Règles de diffusion, de référencement et de déréférencement</a>
-                        <a class="nav-link active" href="#">Conditions Générales de Vente</a>
-                        <a class="nav-link active" href="#">Vie privée / cookies</a>
-                        <a class="nav-link active" href="#">Vos droits et obligations</a>
-                        <a class="nav-link active" href="#">Critères de classement</a>
+                        <a class="nav-link active nav-link_footer" href="#">Conditions générales d’utilisation</a>
+                        <a class="nav-link active nav-link_footer " href="#">Règles de diffusion, de référencement et de déréférencement</a>
+                        <a class="nav-link active nav-link_footer " href="#">Conditions Générales de Vente</a>
+                        <a class="nav-link active nav-link_footer " href="#">Vie privée / cookies</a>
+                        <a class="nav-link active nav-link_footer " href="#">Vos droits et obligations</a>
+                        <a class="nav-link active nav-link_footer " href="#">Critères de classement</a>
                         
                         
                         
@@ -120,10 +121,10 @@
                     <p>PROFESSIONNELS</p>
                     </div>
                      <div class="">
-                        <a class="nav-link active" href="#">Publicité</a>
-                        <a class="nav-link active" href="#">Professionnels de l’immobilier</a>
-                        <a class="nav-link active" href="#">Vos recrutements</a>
-                         <a class="nav-link active" href="#">Toutes nos solutions pros</a>
+                        <a class="nav-link active nav-link_footer" href="#">Publicité</a>
+                        <a class="nav-link active nav-link_footer " href="#">Professionnels de l’immobilier</a>
+                        <a class="nav-link active nav-link_footer " href="#">Vos recrutements</a>
+                         <a class="nav-link active nav-link_footer" href="#">Toutes nos solutions pros</a>
                       </div>
                       
                     </div>
@@ -135,8 +136,8 @@
                         <p>DES QUESTIONS ?</p>
                     </div>
                      <div class="">
-                        <a class="nav-link active" href="#">Aide</a>
-                        <a class="nav-link active" href="#">Nous contacter</a>
+                        <a class="nav-link active nav-link_footer " href="#">Aide</a>
+                        <a class="nav-link active nav-link_footer " href="#">Nous contacter</a>
                         
                     </div>
                     <div class=" block1 pfooter p_2responsive">
@@ -151,14 +152,14 @@
          </div>
          
          <div class="container d-flex justify-content-center block5 pfooter"><p class="block6">Partenaires :
-                <a class="link active" href="#">le coicoin Credit-</a>
-                <a class="link active" href="#">leboncoincoin Emploi Cadres</a>-
-                <a class="link active" href="#">Agriaffaires</a>-
-                <a class="link active" href="#">MachineryZone</a>-
-                <a class="link active" href="#">leDénicheur</a>-
-                <a class="link active" href="#">AVendreALouer</a>-
-                <a class="link active" href="#">leboncoincoin Immobilier Neuf</a>-
-                <a class="link active" href="#">Videdressing</a></p>
+                <a class="link active nav-link_footer " href="#">le coicoin Credit-</a>
+                <a class="link active nav-link_footer " href="#">leboncoincoin Emploi Cadres</a>-
+                <a class="link active nav-link_footer " href="#">Agriaffaires</a>-
+                <a class="link active nav-link_footer " href="#">MachineryZone</a>-
+                <a class="link active nav-link_footer " href="#">leDénicheur</a>-
+                <a class="link active nav-link_footer " href="#">AVendreALouer</a>-
+                <a class="link active nav-link_footer " href="#">leboncoincoin Immobilier Neuf</a>-
+                <a class="link active nav-link_footer " href="#">Videdressing</a></p>
          </div>
          
         </div>
@@ -167,12 +168,14 @@
     	<p id="creation">Le boncoincoin 2018-2019</p>
     </div>
     
-    </nav>
+    </nav> 
 
 </footer>
 
 
-
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="{{ asset('js/app.js') }}"></script>
 
 @yield('script')
@@ -184,6 +187,9 @@
         })
         $('[data-toggle="tooltip"]').tooltip()
     })
+  
+     
+    
 </script>
 
 </body>
