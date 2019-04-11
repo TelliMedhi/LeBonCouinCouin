@@ -207,8 +207,40 @@ class ArticleController extends Controller
     }
 
     
+    public function annonceUser()
+    {
+        $count = DB::table('articles')->where('user_id', auth()->id())->count();
+        $annonces =  DB::table('articles')
+        ->where('user_id', auth()->id())->orderBy('id','desc')->get();
+        
+        
+        /* $annonces = DB::table('articles')->where('id', $id)->first();*/
+        
+        return view('mesAnnonces')->with('annonces', $annonces)->with('count',$count);
+    }
     
     
+    
+    public function categoryMesAnnnonces()
+    {
+        $id_category =$_POST['category'];
+        
+        
+        $count = DB::table('articles')->where('user_id', auth()->id())->count();
+        
+        if (($_POST['category'] == 0   ) )
+        {
+            return redirect()->action('ArticleController@annonceUser');
+        }
+        elseif(($_POST['category'] !== 0  )){
+            
+            $annonces = DB::table('articles')->where('category',$id_category)->where('user_id', auth()->id())->orderBy('id','desc')->get();
+            return view('mesAnnonces')->with('annonces',$annonces)->with('count',$count);
+            
+        }
+        
+       
+    }
     /**
      * Show the form for editing the specified resource.
      *
@@ -240,7 +272,10 @@ class ArticleController extends Controller
      */
     public function destroy($id)
     {
-        //
+        
+         DB::table('articles')->where('id',$id)->delete();
+         
+        return redirect()->action('ArticleController@annonceUser');
     }
     
    

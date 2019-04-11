@@ -47,10 +47,17 @@ Route::get('/acceuil', function () {
         
         Route::get('/recherche', 'ArticleController@index');
         
-        Route::get('/', 'ArticleController@acceuil')->middleware('verified');
+        Route::get('/', 'ArticleController@acceuil');
         
         Route::get('/home', 'ArticleController@acceuil');
         
         Route::post('/category', 'ArticleController@category');
         
-       
+        Route::get('/mesAnnonces', 'ArticleController@annonceUser');
+        
+        Route::post('/mesAnnonces/category', 'ArticleController@categoryMesAnnnonces');
+        
+        Route::post('/Annonce/supprimer/{id}', 'ArticleController@destroy');
+        
+        
+        

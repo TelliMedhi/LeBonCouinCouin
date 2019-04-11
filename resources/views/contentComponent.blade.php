@@ -5,7 +5,7 @@
 
   
   
-           <div class="alert alert-dark col-12 row" role="alert">
+           <div class="alert alert-dark col-12 row " role="alert">
             <div class=" col-12 col-md-6 row">
                  <input class="form-control mr-sm-2 col-12" type="search" placeholder="Que recherchez-vous?" aria-label="Search">
                     

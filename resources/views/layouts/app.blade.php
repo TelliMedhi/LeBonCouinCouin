@@ -41,7 +41,9 @@
             <li class="nav-item{{ currentRoute(route('register')) }}"><a class="nav-link" href="{{ route('register') }}">@lang('Inscription')</a></li>
             @else
                 <li class="nav-item">
+                	<li class=""><a class="nav-link" href="{{asset('/mesAnnonces')}}">Mes Annonces</a></li>
                     <a id="logout" class="nav-link" href="{{ route('logout') }}">@lang('Déconnexion')</a>
+                    
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" class="hide">
                         {{ csrf_field() }}
                     </form>
