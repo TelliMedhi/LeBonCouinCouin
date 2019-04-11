@@ -27,10 +27,12 @@ Route::get('/home', function () {
 Route::get('/acceuil', function () {
     return view('footerComponent');
     });
-    Route::get('/content', function () {
+Route::get('/content', function () {
         return view('contentComponent');
     });
 
+    Route::get('/formMessage/{id}', 'ArticleController@show_formMessage');
+    
    
 
     Route::group([],function (){
@@ -39,11 +41,24 @@ Route::get('/acceuil', function () {
         
     });
     
-
+      Route::post('/test-contact', function(){
+            
+        return new App\Mail\Contact([
+            'nom' =>'Durand',
+            'email' =>'tellimedhi@outlook.fr',
+            'message' =>'ton site est magnifique'
+        ]);
+        
+      });
+    
+        /*Route::post('/test-contact', 'ContactController@store');*/
+        
        
         Route::get('/annonce/{id}', 'ArticleController@show');
 
 		Route::get('/category/{id}','ArticleController@showss');  
     
         Route::get('/region/{id}', 'ArticleController@shows');
+        
+        Route::post('/mail', 'ContactController@sendemail');
 

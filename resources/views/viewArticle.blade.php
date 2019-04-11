@@ -22,7 +22,32 @@
                 </div>
                 <div class="col-12 description mb-5  pt-3 pb-5">
                 	<h4><b>Localisation</b></h4>
-                	 <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2796.4798059267296!2d4.438845314885617!3d45.50041913904805!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47f5ab3cca308903%3A0x1c093cb3290e5b70!2s42290+Sorbiers!5e0!3m2!1sfr!2sfr!4v1554319221035!5m2!1sfr!2sfr" width="680" height="200" frameborder="0" style="border:0" allowfullscreen></iframe>
+                		<div id="map">
+        			<!-- Ici s'affichera la carte -->
+        		</div>
+                	<script type="text/javascript">
+			// On initialise la latitude et la longitude de Paris (centre de la carte)
+			var lat = {{$annonce->latitude}};
+			var lon = {{$annonce->longitude}};
+			var macarte = null;
+			// Fonction d'initialisation de la carte
+			function initMap() {
+				// Créer l'objet "macarte" et l'insèrer dans l'élément HTML qui a l'ID "map"
+                macarte = L.map('map').setView([lat, lon], 11);
+                // Leaflet ne récupère pas les cartes (tiles) sur un serveur par défaut. Nous devons lui préciser où nous souhaitons les récupérer. Ici, openstreetmap.fr
+                L.tileLayer('https://{s}.tile.openstreetmap.fr/osmfr/{z}/{x}/{y}.png', {
+                    // Il est toujours bien de laisser le lien vers la source des données
+                    attribution: 'données © <a href="//osm.org/copyright">OpenStreetMap</a>/ODbL - rendu <a href="//openstreetmap.fr">OSM France</a>',
+                    minZoom: 1,
+                    maxZoom: 20
+                }).addTo(macarte);
+                var marker = L.marker([lat, lon]).addTo(macarte);
+            }
+			window.onload = function(){
+				// Fonction d'initialisation qui s'exécute lorsque le DOM est chargé
+				initMap(); 
+			};
+		</script>
                 </div>
                 
             </div>
@@ -40,7 +65,8 @@
                   <div class="card-body p-0 mt-4 mb-4">
                   
                     <button type="button" class="btn btn-info col-12 mb-2 button_numero_message" id="bouton_localisation">Voir la localisation</button>
-                    <button type="button" id="bouton_email" class="btn btn-info col-12 mt-2 button_numero_message">Envoyer un message</button>
+                    <a href=" {{ URL::asset('formMessage') }}/{{$annonce->id}} ">
+                    <button type="button" id="bouton_email" class="btn btn-info col-12 mt-2 button_numero_message">Envoyer un message</button></a>
                   </div>
                 </div>
             </div>
