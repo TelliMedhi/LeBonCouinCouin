@@ -137,7 +137,7 @@
 	 
 	<div class="col-12 row">
 	   
-    	<?php if(!$annonces->isEmpty()) { ?>
+    	 @if(!$annonces->isEmpty()) 
     	    
     	    @foreach($annonces as $annonce)
     	        <div class="col-12 col-md-9">
@@ -167,9 +167,10 @@
     	        
     	        
     	        @endforeach
-    	        <?php 
-                } else {
-                    ?>
+    	        
+    	       
+    	       	
+    	        @else
                     <div class="text-center mt-5 mb-5 col-12">
                  		<h2><b>  Aucune annonce trouvée !</b></h2> 
     
@@ -177,11 +178,8 @@
     					de changer de catégorie <br>ou d'opter pour la famille de 
     					catégories dans laquelle se trouve cette catégorie.</p>
                    </div>
-                    <?php 
-                }
-         ?>
-	    
-
+        
+				@endif
     </div>
 </div>	
 

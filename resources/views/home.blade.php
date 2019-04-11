@@ -2,6 +2,12 @@
 
 @section('content')
 <div class="container page">
+@if(isset($annonce_ok))
+   <div class="alert alert-success text-center" role="alert">
+ <b>{{$annonce_ok}}</b>
+</div>
+@endif
+
     <div class="col-12 mt-4">
         <div class="row">
         	<div class="col-12 col-md-4">

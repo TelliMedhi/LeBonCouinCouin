@@ -102,7 +102,7 @@ class ArticleController extends Controller
         $count = DB::table('articles')->count();
         
         
-        return view('/home')->with('count',$count);
+        return view('/home')->with('count',$count)->with('annonce_ok','Annonce bien ajouté.');
         
     }
     /**
