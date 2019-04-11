@@ -109,23 +109,23 @@
 	
 	
     	<div class="col-12">
-        	<big>Annonce : {{$region->name_region}}</big>
+    	<div class="col-12 haut_page">
+		<h3 id=""><b>Annonce : {{$region->name_region}}</b></h3>
+		</div>
+        	
         	<div class=" text-center col-12">
         	   <img class="pub col-12" alt="" src="{{asset('/img/backup.jpg')}}">
         	 </div>
         	 <div class=" row blSouPub">
             	 <div class="col-3">
-            	   <p>{{$count}} Annonces</p>
+            	   <p><b>{{$count}} Annonces</b></p>
             	 </div>
             	 <div class="col-5">
             	   <div class="form-check form-check-inline">
                       <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                      <label class="form-check-label" for="inlineCheckbox1">Particuliers 2 278 799</label>
+                      <label class="form-check-label" for="inlineCheckbox1">Particuliers {{$count}}</label>
                    </div>
-                    <div class="form-check form-check-inline">
-                      <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                      <label class="form-check-label" for="inlineCheckbox2">Professionnels 218 196</label>
-                  </div>
+                    
             	</div>
         	  
         	 </div>
