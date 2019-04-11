@@ -36,14 +36,14 @@ class ArticleController extends Controller
     public function index()
     {
         $count = DB::table('articles')->count();
-        
+        $region = DB::table('region')->where('id_region', 0)->first();
         $annonce =  DB::table('articles')
-        
+        ->join('category' , 'id_category', '=','category')
         ->orderBy('id','desc')->get();
         
         //$annonces = Article::all()->orderBy('id','desc')->get();
         
-        return view('contentComponent')->with('annonces', $annonce)->with('count',$count);
+        return view('contentComponent')->with('annonces', $annonce)->with('count',$count)->with('region', $region);
     }
 
    
@@ -113,6 +113,7 @@ class ArticleController extends Controller
      */
     public function show($id)
     {
+          
         $annonce =  DB::table('articles')
         ->join('users' , 'users.id', '=','articles.user_id')
         ->SELECT('text','name','email','prix','code_postal','titre','image0','articles.created_at')
@@ -130,13 +131,13 @@ class ArticleController extends Controller
     
     public function shows($id)
     {
-        
+        $region = DB::table('region')->where('id_region', $id)->first();
         
         $count = DB::table('articles')->count();
         
-        $annonces = DB::table('articles')->where('region', $id)->orderBy('id','desc')->get();
+        $annonces = DB::table('articles')->join('category' , 'id_category', '=','category')->where('region', $id)->orderBy('id','desc')->get();
         
-        return view('contentComponent')->with('annonces', $annonces )->with('count',$count);
+        return view('contentComponent')->with('annonces', $annonces )->with('count',$count)->with('region', $region);
         
         
         
@@ -158,49 +159,49 @@ class ArticleController extends Controller
             return redirect()->action('ArticleController@index');
         }
         elseif(($_POST['category'] !== 0 & $_POST['region'] == 0 & $_POST['code_postal'] == null)){
-            
-            $annonces = DB::table('articles')->where('category',$id_category)->orderBy('id','desc')->get();
-            return view('contentComponent')->with('annonces',$annonces)->with('count',$count);
+            $region = DB::table('region')->where('id_region', 0)->first();
+            $annonces = DB::table('articles')->join('category' , 'id_category', '=','category')->where('category',$id_category)->orderBy('id','desc')->get();
+            return view('contentComponent')->with('annonces',$annonces)->with('count',$count)->with('region', $region);
             
         }
         elseif(($_POST['category'] == 0 & $_POST['region'] !== 0 & $_POST['code_postal'] == null)){
+            $region = DB::table('region')->where('id_region', $id_region)->first();
+            $annonces = DB::table('articles')->join('category' , 'id_category', '=','category')->where('region', $id_region)->orderBy('id','desc')->get();
             
-            $annonces = DB::table('articles')->where('region', $id_region)->orderBy('id','desc')->get();
-            
-            return view('contentComponent')->with('annonces', $annonces )->with('count',$count);
+            return view('contentComponent')->with('annonces', $annonces )->with('count',$count)->with('region', $region);
             
         }
         elseif(($_POST['category'] == 0 & $_POST['region'] == 0 & $_POST['code_postal'] !== null)){
+            $region = DB::table('region')->where('id_region', 0)->first();
+            $annonces = DB::table('articles')->join('category' , 'id_category', '=','category')->where('code_postal', $code_postal)->orderBy('id','desc')->get();
             
-            $annonces = DB::table('articles')->where('code_postal', $code_postal)->orderBy('id','desc')->get();
-            
-            return view('contentComponent')->with('annonces', $annonces )->with('count',$count);
+            return view('contentComponent')->with('annonces', $annonces )->with('count',$count)->with('region', $region);
             
         }
         elseif(($_POST['category'] !== 0 & $_POST['region'] !== 0 & $_POST['code_postal'] == null)){
+            $region = DB::table('region')->where('id_region', $id_region)->first();
+            $annonces = DB::table('articles')->join('category' , 'id_category', '=','category')->where('category',$id_category)->where('region',$id_region)->orderBy('id','desc')->get();
             
-            $annonces = DB::table('articles')->where('category',$id_category)->where('region',$id_region)->orderBy('id','desc')->get();
-            
-            return view('contentComponent')->with('annonces', $annonces )->with('count',$count);
+            return view('contentComponent')->with('annonces', $annonces )->with('count',$count)->with('region', $region);
             
         }
         elseif(($_POST['category'] !== 0 & $_POST['region'] == 0 & $_POST['code_postal'] !== null)){
+            $region = DB::table('region')->where('id_region', 0)->first();
+            $annonces = DB::table('articles')->join('category' , 'id_category', '=','category')->where('category',$id_category)->where('code_postal', $code_postal)->orderBy('id','desc')->get();
             
-            $annonces = DB::table('articles')->where('category',$id_category)->where('code_postal', $code_postal)->orderBy('id','desc')->get();
-            
-            return view('contentComponent')->with('annonces', $annonces )->with('count',$count);
+            return view('contentComponent')->with('annonces', $annonces )->with('count',$count)->with('region', $region);
             
         }
         elseif(($_POST['category'] == 0 & $_POST['region'] !== 0 & $_POST['code_postal'] !== null)){
+            $region = DB::table('region')->where('id_region', $id_region)->first();
+            $annonces = DB::table('articles')->join('category' , 'id_category', '=','category')->where('region',$id_region)->where('code_postal', $code_postal)->orderBy('id','desc')->get();
             
-            $annonces = DB::table('articles')->where('region',$id_region)->where('code_postal', $code_postal)->orderBy('id','desc')->get();
-            
-            return view('contentComponent')->with('annonces', $annonces )->with('count',$count);
+            return view('contentComponent')->with('annonces', $annonces )->with('count',$count)->with('region', $region);
             
         }
         else{
             
-            $annonces = DB::table('articles')->where('category',$id_category)->where('region',$id_region)->where('code_postal', $code_postal)->orderBy('id','desc')->get();
+            $annonces = DB::table('articles')->join('category' , 'id_category', '=','category')->where('category',$id_category)->where('region',$id_region)->where('code_postal', $code_postal)->orderBy('id','desc')->get();
         return view('contentComponent')->with('annonces',$annonces)->with('count',$count);
         }
     
@@ -211,6 +212,7 @@ class ArticleController extends Controller
     {
         $count = DB::table('articles')->where('user_id', auth()->id())->count();
         $annonces =  DB::table('articles')
+        ->join('category' , 'id_category', '=','category')
         ->where('user_id', auth()->id())->orderBy('id','desc')->get();
         
         
@@ -234,7 +236,7 @@ class ArticleController extends Controller
         }
         elseif(($_POST['category'] !== 0  )){
             
-            $annonces = DB::table('articles')->where('category',$id_category)->where('user_id', auth()->id())->orderBy('id','desc')->get();
+            $annonces = DB::table('articles')->join('category' , 'id_category', '=','category')->where('category',$id_category)->where('user_id', auth()->id())->orderBy('id','desc')->get();
             return view('mesAnnonces')->with('annonces',$annonces)->with('count',$count);
             
         }

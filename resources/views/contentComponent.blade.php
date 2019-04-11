@@ -109,7 +109,7 @@
 	
 	
     	<div class="col-12">
-        	<big>Annonce:Rhone-Alpes</big>
+        	<big>Annonce : {{$region->name_region}}</big>
         	<div class=" text-center col-12">
         	   <img class="pub col-12" alt="" src="{{asset('/img/backup.jpg')}}">
         	 </div>
@@ -151,9 +151,11 @@
     	        <div class="col-12 mt-4">
     	        <h3 class="titreCard"><b>{{$annonce->titre}}</b></h3>
     	        <h4 class="prixCard"><b>{{$annonce->prix}} €</b></h4>
+    	         <h5 class=""><b>{{$annonce->nom_category}} </b></h5>
     	        </div>
     	        
     	        <div class="col-12 mt-4">
+    	        
     	        <p>{{$annonce->code_postal}}<p>
     	        <p>{{$annonce->created_at}}<p>
     	        

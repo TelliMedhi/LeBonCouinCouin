@@ -97,6 +97,7 @@
         	        <div class="col-9 mt-4">
                 	        <h3 class="titreCard"><b>{{$annonce->titre}}</b></h3>
                 	        <h4 class="prixCard"><b>{{$annonce->prix}} €</b></h4>
+                	        <h5 class=""><b>{{$annonce->nom_category}} </b></h5>
         	        	
         	        </div>
         	        <div class="col-3">
