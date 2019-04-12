@@ -7,8 +7,8 @@
     <div class="col-12 "> 
     <div class="row">
 
-        <div class="contentFormMess col-6">
-            <p>Envoyer un message à : {{$annonce->name}}</p>
+        <div class="contentFormMess col-12 col-md-6">
+           <h4><b>Envoyer un message à : {{$annonce->name}}</b></h4>
 
                 <form action ="{{asset('/mail')}}"method='Post'class="needs-validation" novalidate>
                 {{ csrf_field() }}
@@ -16,23 +16,24 @@
                     <div class="col-md-6 mb-3">
                        <div class="container row">
                               <label for="validationCustom02">Votre nom</label>
-                              <input type="text" class="form-control" name='name' id="validationCustom02" placeholder="Last name" value="Votre nom" required>
+                              <input type="text" class="form-control" name='name' id="validationCustom02" placeholder="nom" required>
                                   
                                <div class="valid-feedback">
                                     Looks good!
                                   </div>
-                             <input type="text" class="form-control" name='subject' id="validationCustom02" placeholder="Last name" value="" required>
+                                   <label for="validationCustomUsername">Adresse-email</label>
+                             	<input type="text" class="form-control" name='email_annonce' id="validationCustom02" placeholder="email" value="" required>
                                   
                          </div>
    
-                       <label for="validationCustomUsername">adresse-mail</label>
+                      
                         <div class="input-group">
                             <div class="input-group-prepend">
                            </div>
         				</div>
-      			   <select name="id" id="category" class="col-12"> <option value="{{$annonce->id}}">{{$annonce->id}}</option> </select>
-      					
-                        <select name="email" id="category" class="col-12"> <option value="{{$annonce->email}}">{{$annonce->email}}</option> </select>
+      			   <select name="id" id="" class="col-12  " style="display:none;"> <option value="{{$annonce->id}}">{{$annonce->id}}</option> </select>
+      					<input type="text" class="form-control" name='title' id="validationCustom02" style="display:none;" placeholder="email" value="{{$annonce->titre}}" required>
+                        <select name="email" id="" class="col-12 " style="display:none;"> <option value="{{$annonce->email}}">{{$annonce->email}}</option> </select>
                             <div class="invalid-feedback">
                               Votre adresse-mail ou votre nom n'est pas valide ou n'existe pas.
                             </div>
@@ -40,7 +41,7 @@
   
                 			<div class="input-group">
                                   <div class="input-group-prepend">
-                                    <span class="input-group-text">Taper votre message</span>
+                                    <label for="validationCustom02">Taper votre message</label>
                                   </div>
                                     ​<textarea  class="form-group col-12 " name="content" rows="10" cols="70"></textarea>  
                             </div>
@@ -71,21 +72,27 @@
                             </script>
 
            </div>
-            <div class="contentFormMess col-6">
+            <div class="contentFormMess col-12 col-md-6">
 
-                <p>Résumé de l'annonce</p>
+                <h4><b>Résumé de l'annonce</b></h4>
                 <div class="contentFormResum">
-                <p>{{$annonce->name}}</p>
-                <p>{{$annonce->prix}}</p>
-                <p>{{$annonce->created_at}}</p>
+                    <h5>{{$annonce->titre}}</h5>
+                    <h5 class="prixCard"><b>{{$annonce->prix}} €</b></h5>
+                    <p>{{$annonce->created_at}}</p> 
+                    <p>par <b>{{$annonce->name}}</b></p>
                 </div>
-                <p>Description</p>
-                <p>{{$annonce->text}}</p>
-                <p>localisation</p>
-                <p>{{$annonce->code_postal}}</p>
-                <p>{{$annonce->ville_nom}}</p>
+                <div class="contentFormResum">
+                    <h4 class="mt-3"><b>Description</b></h4>
+                    <p>{{$annonce->text}}</p>
+                </div>
+                <div class="contentFormResum">
+                	 <h4 class="mt-3"><b>localisation</b></h4>
+                    
+                    <p>{{$annonce->ville_nom}} {{$annonce->code_postal}}</p>
+                    
+                </div>
              </div>
-      </div>{{$annonce->email}}
+      </div>
       </div>
 </div>
 

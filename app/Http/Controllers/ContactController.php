@@ -16,6 +16,7 @@ class ContactController extends Controller
     {    $count = DB::table('articles')->count();
         $content = $request['content'];
         $title = $request['title'];
+        
         $id = $request['id'];
         $user_email = $request['email'];
         $user_email_annonce = $request['email_annonce'];
@@ -28,7 +29,7 @@ class ContactController extends Controller
        
         try
         {
-            $data = ['email'=> $user_email,'name'=> $user_name,'subject' => $title, 'content' => $content ,'id' =>$id];
+            $data = ['email_annonce' => $user_email_annonce ,'email'=> $user_email,'name'=> $user_name,'subject' => $title, 'content' => $content ,'id' =>$id];
             Mail::send('emails/contact', $data, function($message) use($data)
             {
                 $subject=$data['subject'];

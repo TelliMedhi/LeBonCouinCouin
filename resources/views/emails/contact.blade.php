@@ -7,7 +7,9 @@
 <body>
 <h2>Prise de contact sur le boncoincoin</h2>
 <ul>
-<li><strong>Message:</strong> : {{$content}}</li>
+<li><strong>De :</strong>  {{$name}}</li>
+<li><strong>Adresse Mail :</strong>  {{$email_annonce}}</li>
+<li><strong>Message :</strong>  {{$content}}</li>
 
 <p>Ce message vous a été envoyé au sujet de l'annonce " {{$subject}} "que vous avez déposée sur leboncoincoin:<a href ="http://localhost/firstEclipse/leBonCouinCouin/public/annonce/{{$id}}">Retourner à mon annonce</a></p><br>
 

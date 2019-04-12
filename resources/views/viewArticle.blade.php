@@ -64,7 +64,7 @@
                      </div>
                   <div class="card-body p-0 mt-4 mb-4">
                   
-                    <button type="button" class="btn btn-info col-12 mb-2 button_numero_message" id="bouton_localisation">Voir la localisation</button>
+                   	<a href="#map2"> <button type="button" class="btn btn-info col-12 mb-2 button_numero_message" id="bouton_localisation">Voir la localisation</button></a>
                     <a href=" {{ URL::asset('formMessage') }}/{{$annonce->id}} ">
                     <button type="button" id="bouton_email" class="btn btn-info col-12 mt-2 button_numero_message">Envoyer un message</button></a>
                   </div>
@@ -78,15 +78,7 @@
 
 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script>
-$(document).ready(function(){
-	$("#bouton_email").click(function(){
-		document.getElementById("bouton_email").innerHTML = "<h4><b></b>{{$annonce->email}}</h4>";
-	});
-	$("#bouton_localisation").click(function(){
-		document.getElementById("bouton_localisation").innerHTML = "<h4><b>code postal : {{$annonce->code_postal}}<b><h4>";
-	});
-	   
-});
+
 
 	
 </script>
