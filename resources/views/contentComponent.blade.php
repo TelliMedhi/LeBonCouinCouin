@@ -59,7 +59,7 @@
     		
     		<div class=" col-12 col-md-6 row">
     		    
-    		     <div class="col-6">
+    		     <div class="col-12 col-md-6">
     	            <div class="btn-group ">
                           
                           
@@ -133,7 +133,7 @@
 	 
 	 
 	 
-	 
+	
 	 
 	<div class="col-12 row">
 	   
@@ -144,8 +144,8 @@
     	        <a href=" {{ URL::asset('annonce') }}/{{$annonce->id}} " class="  lienCard" style="text-decoration:none;">
     	        <div  class="col-12 row Cardcontent mb-4  pl-0">
     	        
-    	        <div class="col-4 text-center imgCard">
-    	        <img class="card-img-top" src="{{asset($annonce->image0)}}" alt="Card image cap">
+    	        <div class="col-4 text-center align-middle imgCard">
+    	        	<img class="card-img-top align-middle"  src="{{asset($annonce->image0)}}" alt="Card image cap">
     	        </div>
     	        <div class="col-8">
     	        <div class="col-12 mt-4">

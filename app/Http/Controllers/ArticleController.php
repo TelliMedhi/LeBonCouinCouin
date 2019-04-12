@@ -200,9 +200,9 @@ class ArticleController extends Controller
             
         }
         else{
-            
+            $region = DB::table('region')->where('id_region', $id_region)->first();
             $annonces = DB::table('articles')->join('category' , 'id_category', '=','category')->where('category',$id_category)->where('region',$id_region)->where('code_postal', $code_postal)->orderBy('id','desc')->get();
-        return view('contentComponent')->with('annonces',$annonces)->with('count',$count);
+            return view('contentComponent')->with('annonces',$annonces)->with('count',$count)->with('region', $region);
         }
     
     }

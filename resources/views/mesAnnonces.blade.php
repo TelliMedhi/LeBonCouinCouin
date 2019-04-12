@@ -69,7 +69,7 @@
     			</div>
     		</div>
 		<div class="col-3">
-           <p>{{$count}} Annonces</p>
+           <p><b>{{$count}} Annonces</b></p>
         </div>
 	
 	
@@ -100,7 +100,7 @@
                 	        <h5 class=""><b>{{$annonce->nom_category}} </b></h5>
         	        	
         	        </div>
-        	        <div class="col-3">
+        	        <div class="col-12 col-md-3">
         	        
             	        <form action="{{asset( '/Annonce/supprimer')}}/{{$annonce->id}}" method="POST" >
             	        {{ csrf_field() }} 

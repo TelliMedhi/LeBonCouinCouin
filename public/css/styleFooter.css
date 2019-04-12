@@ -107,37 +107,8 @@
 	
 }
 
-.Cardcontent{
-		
-		color:black;
-	   min-height:180px;
-	   background-color:#fff; 
-	   border-radius:5px;
-	   box-shadow: 1px 1px 12px #cad1d9;
-  	
-}
 
 
-
-.card-img-top{
-	    
-   	width: 150px;
-	height: 150px;
-	max-width: 100%;
-	height: auto;
-    
-    margin: auto;
-  
-    
-}
-.imgCard{
-	background-color:#cad1d9;
-	border-top-left-radius:5px;
-	border-bottom-left-radius:5px;
-	max-width: 250px;
-	
-	
-}
 .prixCard{
 	    color: #feea2d;
 }
@@ -145,17 +116,13 @@
 	color: #feea2d;
 }
 
-@media only screen and (min-width:800px) {
-	.p_responsive{
-		display:none;
-	}
-	
-}
+
 
 .Cardcontent{
 		
 		color:black;
-	   min-height:180px;
+	   min-height:218px;
+	  
 	   background-color:#fff; 
 	   border-radius:5px;
 	   box-shadow: 1px 1px 12px #cad1d9;
@@ -166,12 +133,12 @@
 
 .card-img-top{
 	    
-   	width: 150px;
-	height: 150px;
-	max-width: 100%;
-	height: auto;
+   	max-width: 250px;
+	height:auto;
+	max-height: 218px;
+	
     
-    margin: auto;
+
   
     
 }
@@ -180,7 +147,8 @@
 	border-top-left-radius:5px;
 	border-bottom-left-radius:5px;
 	max-width: 250px;
-	
+	max-height:218px;
+
 	
 }
 .prixCard{
