@@ -106,7 +106,44 @@
 	}
 	
 }
+.badge{
+    position: absolute;
+}
+.blSouPub{
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
+#titleCard{
+    color: black;
+}
+  #map2 {
+        height: 200px;  /* The height is 200 pixels */
+        width: 100%;  /* The width is the width of the web page */
+       }
+.btnFormMessage{
+    margin-top: 10px;
+}
 
+.contentFormMess{
+    -webkit-box-flex: 1;
+-webkit-flex: 1;
+-ms-flex: 1;
+flex: 1;
+margin-right: 1.3rem;
+padding: 1rem 2rem;
+background-color: #fff;
+-webkit-box-shadow: 0 2px 4px rgba(0,0,0,.05);
+box-shadow: 0 2px 4px rgba(0,0,0,.05);
+border: none;
+}
+.contentFormResum{
+      padding: 20px 0;
+    margin: 0 1rem;
+    border-bottom: 1px solid #cad1d9;  
+}
+.textArea{
+    height: 80px;
+}
 
 
 .prixCard{

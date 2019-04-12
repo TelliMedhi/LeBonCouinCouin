@@ -2,11 +2,18 @@
 
 @section('content')
 <div class="container page">
+
 @if(isset($annonce_ok))
    <div class="alert alert-success text-center" role="alert">
  <b>{{$annonce_ok}}</b>
 </div>
 @endif
+
+@if ( isset($messEnvMail))
+    		<div class="alert alert-success text-center" role="alert">
+             <b>{{$messEnvMail}}</b>
+            </div>
+    		@endif
 
     <div class="col-12 mt-4">
         <div class="row">
@@ -18,6 +25,7 @@
         		
         		<button type="button" class="btn btn-outline-primary col-12 mt-4">Rechercher autour de moi</button>
     		</div>
+    	
     		 	
     		<div class="col-12 col-md-8">
     		<div class="map row" id="map">

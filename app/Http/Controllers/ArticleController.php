@@ -116,13 +116,28 @@ class ArticleController extends Controller
           
         $annonce =  DB::table('articles')
         ->join('users' , 'users.id', '=','articles.user_id')
-        ->SELECT('text','name','email','prix','code_postal','titre','image0','articles.created_at')
+        ->SELECT('text','name','email','prix','code_postal','titre','image0','articles.created_at','latitude','longitude','articles.id')
         ->where('articles.id', $id)->first();
+        
         
         
       /* $annonces = DB::table('articles')->where('id', $id)->first();*/
         
         return view('viewArticle')->with('annonce', $annonce);
+    }
+    public function show_formMessage($id)
+    {
+        $annonce =  DB::table('articles')
+        ->join('users' , 'users.id', '=','articles.user_id')
+        ->join('villes_france_free' , 'ville_code_postal', '=','code_postal')
+        ->SELECT('text','name','email','prix','code_postal','ville_nom','titre','image0','articles.created_at','latitude','longitude','articles.id','email')
+        ->where('articles.id', $id)->first();
+        
+        
+        
+        /* $annonces = DB::table('articles')->where('id', $id)->first();*/
+        
+        return view('formMessageComponent')->with('annonce', $annonce);
     }
     
 
