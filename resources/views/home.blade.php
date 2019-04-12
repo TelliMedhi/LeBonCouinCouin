@@ -23,7 +23,7 @@
         	
         	<a href="{{route ('article.create')}}">	<button type="button"  class="btn btn-primary col-12">Déposer une annonce</button></a>
         		
-        		<button type="button" class="btn btn-outline-primary col-12 mt-4">Rechercher autour de moi</button>
+        		<a href="{{asset('/region/22')}}"><button type="button" class="btn btn-outline-primary col-12 mt-4">Rechercher autour de moi</button></a>
     		</div>
     	
     		 	
