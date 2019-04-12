@@ -135,7 +135,7 @@
 	 
 	
 	 
-	<div class="col-12 row">
+	<div class="col-12 row p-0 m-0">
 	   
     	 @if(!$annonces->isEmpty()) 
     	    
