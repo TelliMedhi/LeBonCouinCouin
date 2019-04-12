@@ -21,7 +21,7 @@
                                <div class="valid-feedback">
                                     Looks good!
                                   </div>
-                             <input type="text" class="form-control" name='subject' id="validationCustom02" placeholder="Last name" value="Votre nom" required>
+                             <input type="text" class="form-control" name='subject' id="validationCustom02" placeholder="Last name" value="" required>
                                   
                          </div>
    
@@ -30,6 +30,7 @@
                             <div class="input-group-prepend">
                            </div>
         				</div>
+      			   <select name="id" id="category" class="col-12"> <option value="{{$annonce->id}}">{{$annonce->id}}</option> </select>
       					
                         <select name="email" id="category" class="col-12"> <option value="{{$annonce->email}}">{{$annonce->email}}</option> </select>
                             <div class="invalid-feedback">

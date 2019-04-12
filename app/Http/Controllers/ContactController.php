@@ -15,7 +15,7 @@ class ContactController extends Controller
     {
         $content = $request['content'];
         $title = $request['title'];
-      
+        $id = $request['id'];
         $user_email = $request['email'];
         $user_email_annonce = $request['email_annonce'];
         $user_name = $request['name'];
@@ -27,7 +27,7 @@ class ContactController extends Controller
        
         try
         {
-            $data = ['email'=> $user_email,'name'=> $user_name,'subject' => $title, 'content' => $content ];
+            $data = ['email'=> $user_email,'name'=> $user_name,'subject' => $title, 'content' => $content ,'id' =>$id];
             Mail::send('emails/contact', $data, function($message) use($data)
             {
                 $subject=$data['subject'];

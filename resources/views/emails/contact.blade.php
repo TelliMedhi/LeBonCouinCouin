@@ -6,12 +6,18 @@
 </head>
 <body>
 <h2>Prise de contact sur le boncoincoin</h2>
-<p>Réception d'une prise de contact avec les éléments suivents :</p>
 <ul>
-<li><strong>nom:</strong> : {{$name}}</li>
-<li><strong>Email:</strong> :{{$email}} </li>
+<li><strong>Message:</strong> : {{$content}}</li>
 
-<li><strong>Message:</strong> : </li>
+<p>Ce message vous a été envoyé au sujet de l'annonce " {{$subject}} "que vous avez déposée sur leboncoincoin:<a href ="http://localhost/firstEclipse/leBonCouinCouin/public/annonce/{{$id}}">Retourner à mon annonce</a></p><br>
+
+<p>Merci de votre confiance et à très bientôt,<br>
+<p>L'équipe leboncoin</p>
+<a href ="http://51.75.126.51/LeBonCoinCoin/public/home"> le boncoincoin.fr</a>
+
+
+
+
 
 
 </ul>
